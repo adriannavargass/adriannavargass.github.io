@@ -1,0 +1,386 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700&display=swap');
+
+/* =========================================
+   1. REGLAS GENERALES Y VARIABLES
+========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --rosa: #d99eaa;
+    --rosa-hover: #c28793;
+    --rosa-claro: #fdf5f7;
+    --blanco: #ffffff;
+    --texto: #333333;
+    --texto-suave: #666666;
+    --borde: #e8d3d7;
+    --radio: 12px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #ffffff;
+    color: var(--texto);
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+h1, h2, h3, .logo, .footer-logo {
+    font-family: 'Playfair Display', serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* =========================================
+   2. ENCABEZADO Y NAVEGACIÓN (HEADER)
+========================================= */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background-color: var(--rosa);
+    width: 100%;
+    position: relative;
+    z-index: 9999;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--blanco);
+    letter-spacing: 2px;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: var(--blanco);
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    display: block;
+    padding: 8px 12px;
+    transition: background-color 0.3s ease;
+}
+
+.menu a:hover {
+    background-color: var(--rosa-hover);
+    border-radius: 4px;
+}
+
+/* --- MENÚ DESPLEGABLE (DROPDOWN) --- */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-btn {
+    display: inline-block;
+}
+
+.dropdown-content {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--rosa);
+    min-width: 170px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    list-style: none;
+    display: none;
+    z-index: 1000;
+    flex-direction: column;
+    padding: 8px 0;
+}
+
+.dropdown-content li {
+    width: 100%;
+    display: block;
+}
+
+.dropdown-content a {
+    color: var(--blanco);
+    padding: 10px 18px;
+    font-size: 13px;
+    font-weight: 500;
+    text-align: left;
+    display: block;
+    letter-spacing: 0.5px;
+}
+
+.dropdown-content a:hover {
+    background-color: var(--rosa-hover);
+    border-radius: 0;
+}
+
+.dropdown:hover .dropdown-content {
+    display: flex;
+}
+
+/* =========================================
+   3. CONTENEDOR PRINCIPAL Y BANNER
+========================================= */
+.contenedor-principal {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    flex: 1;
+}
+
+.banner-trucos {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.banner-trucos h1 {
+    font-size: 2.2rem;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: var(--rosa);
+}
+
+.banner-trucos p {
+    color: var(--texto-suave);
+    font-size: 0.9rem;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.5;
+}
+
+/* =========================================
+   4. SECCIÓN GRID DE TUTORIALES
+========================================= */
+.seccion-grid-tutoriales {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.card-tutorial {
+    background-color: var(--blanco);
+    border-radius: var(--radio);
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--borde);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-tutorial:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.card-tutorial img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+
+.overlay-tutorial {
+    padding: 25px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.overlay-tutorial h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: var(--texto);
+    margin-bottom: 20px;
+    line-height: 1.4;
+}
+
+.card-bottom {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.icon-video {
+    color: var(--rosa);
+    font-size: 1.1rem;
+}
+
+.read-more {
+    display: inline-block;
+    padding: 8px 24px;
+    border: 1px solid var(--texto);
+    border-radius: 6px;
+    color: var(--texto);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.read-more:hover {
+    background-color: var(--texto);
+    color: var(--blanco);
+}
+
+/* =========================================
+   5. CONTACTO FLOTANTE WHATSAPP
+========================================= */
+.floating-contact {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.floating-contact a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #25d366;
+    color: #ffffff;
+    padding: 8px 16px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.8rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.floating-contact a:hover {
+    transform: translateY(-3px);
+    background-color: #20ba5a;
+}
+
+/* =========================================
+   6. PIE DE PÁGINA (FOOTER)
+========================================= */
+.footer {
+    background-color: var(--rosa);
+    color: #ffffff;
+    padding: 40px 40px 20px 40px;
+    margin-top: 60px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 30px;
+    align-items: start;
+}
+
+.brand-col h2 {
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+}
+
+.brand-col a,
+.links-col a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.8rem;
+    display: block;
+    margin-bottom: 6px;
+    opacity: 0.9;
+}
+
+.footer-col h4, .links-col h4 {
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-bottom: 12px;
+}
+
+.social-links-footer {
+    display: flex;
+    gap: 12px;
+}
+
+.social-links-footer a {
+    color: #ffffff;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: opacity 0.3s;
+}
+
+.social-links-footer a:hover {
+    opacity: 0.7;
+}
+
+.subscribe-form {
+    display: flex;
+    background: #ffffff;
+    border-radius: 3px;
+    overflow: hidden;
+    max-width: 220px;
+}
+
+.subscribe-form input {
+    border: none;
+    padding: 8px 10px;
+    font-size: 0.75rem;
+    width: 100%;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+.subscribe-form button {
+    background: transparent;
+    border: none;
+    padding: 8px 10px;
+    color: var(--rosa);
+    cursor: pointer;
+}
+
+/* =========================================
+   7. MEDIA QUERIES (RESPONSIVE)
+========================================= */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+    }
+
+    .seccion-grid-tutoriales {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+}

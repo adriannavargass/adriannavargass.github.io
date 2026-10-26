@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aless - Productos</title>
+    <link rel="stylesheet" href="ccs/estilos.productos.css">
+    <link rel="icon" href="imag/icono.png" type="image/png" sizes="32x32">
+    <link rel="icon" href="imag/icono.png" type="image/png" sizes="192x192">
+    <link rel="apple-touch-icon" href="imag/icono.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+   
+    <header class="header">
+    <div class="logo">ALESS</div>
+    <nav class="nav">
+        <ul class="menu">
+            <li><a href="index.html">INICIO</a></li>
+            <li><a href="tutoriales.html">TUTORIALES</a></li>
+            <li><a href="contacto.html">CONTACTO</a></li>
+                    <li><a href="nosotros.html">NOSOTROS</a></li>
+            <!-- Menú Desplegable de Productos -->
+            <li class="dropdown">
+                <a href="productos.html" class="active dropdown-btn">PRODUCTOS ▾</a>
+                <ul class="dropdown-content">
+                    <li><a href="index.html">INICIO</a></li>
+                    <li><a href="contacto.html">CONTACTO</a></li>
+                    <li><a href="tutoriales.html">TUTORIALES</a></li>
+                    <li><a href="nosotros.html">NOSOTROS</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+                 
+
+
+
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="contenedor-principal">
+      
+        <section class="banner-contacto">
+            <h1>CATÁLOGO DE MAQUILLAJE</h1>
+            <p>Explora nuestras categorías y selecciona tus productos favoritos</p>
+        </section>
+
+        <div class="layout-tienda">
+            
+            
+            <aside class="barra-lateral">
+                <h3>CATEGORÍAS</h3>
+                <ul class="lista-categorias">
+                    <li><button class="btn-categoria active" onclick="filtrarProductos('todos')">Todos los Productos</button></li>
+                    <li><button class="btn-categoria" onclick="filtrarProductos('ojos')">Ojos</button></li>
+                    <li><button class="btn-categoria" onclick="filtrarProductos('labios')">Labios</button></li>
+                    <li><button class="btn-categoria" onclick="filtrarProductos('rostro')">Rostro</button></li>
+                    <li><button class="btn-categoria" onclick="filtrarProductos('perfume')">Cuerpo</button></li>
+                </ul>
+            </aside>
+
+            
+            <section class="grilla-productos" id="contenedor-productos">
+                <!-- Producto 1 -->
+                <div class="card-producto producto-item ojos">
+                    <div class="contenedor-imagen">
+                        <img src="imag/delineador.png" alt="Delineador Fix">
+                    </div>
+                    <div class="info-producto">
+                        <h3>Delineador Fix - Esika</h3>
+                        <p class="descripcion">Trazos precisos y de larga duración, ideal para realzar tu mirada durante todo el día.</p>
+                        <p class="precio">$15.00</p>
+                        <button class="btn-magenta" onclick="agregarAlCarrito('Delineador Fix - Esika', 15.00)">AGREGAR AL CARRITO</button>
+                    </div>
+                </div>
+
+                <!-- Producto 2 -->
+                <div class="card-producto producto-item labios">
+                    <div class="contenedor-imagen">
+                        <img src="imag/mate.png" alt="Labial Etude">
+                    </div>
+                    <div class="info-producto">
+                        <h3>Labial Mate - Color Nude</h3>
+                        <p class="descripcion">Acabado mate aterciopelado con alta pigmentación y comodidad superior en los labios.</p>
+                        <p class="precio">$22.00</p>
+                        <button class="btn-magenta" onclick="agregarAlCarrito('Labial Etude Velvet', 22.00)">AGREGAR AL CARRITO</button>
+                    </div>
+                </div>
+
+                <!-- Producto 3 -->
+                <div class="card-producto producto-item ojos">
+                    <div class="contenedor-imagen">
+                        <img src="imag/pestaña.png" alt="Máscara de Pestañas">
+                    </div>
+                    <div class="info-producto">
+                        <h3>Máscara de Pestañas</h3>
+                        <p class="descripcion">Volumen extremo al instante y definición perfecta sin grumos para una mirada impactante.</p>
+                        <p class="precio">$18.00</p>
+                        <button class="btn-magenta" onclick="agregarAlCarrito('Máscara de Pestañas', 18.00)">AGREGAR AL CARRITO</button>
+                    </div>
+                </div>
+
+                <!-- Producto 4 -->
+                <div class="card-producto producto-item rostro">
+                    <div class="contenedor-imagen">
+                        <img src="imag/rubornat.png" alt="Rubor">
+                    </div>
+                    <div class="info-producto">
+                        <h3>Rubor Natural</h3>
+                        <p class="descripcion">Tono rosado natural radiante que aporta un toque de frescura y vitalidad a tus mejillas.</p>
+                        <p class="precio">$20.00</p>
+                        <button class="btn-magenta" onclick="agregarAlCarrito('Rubor Rosaa', 20.00)">AGREGAR AL CARRITO</button>
+                    </div>
+                </div>
+
+                <!-- Producto 5 -->
+                <div class="card-producto producto-item rostro">
+                    <div class="contenedor-imagen">
+                        <img src="imag/baseliq.png" alt="Base Líquida">
+                    </div>
+                    <div class="info-producto">
+                        <h3>Base Líquida Cobertura Total</h3>
+                        <p class="descripcion">Acabado natural sin brillo que unifica el tono de piel con una cobertura impecable y duradera.</p>
+                        <p class="precio">$28.00</p>
+                        <button class="btn-magenta" onclick="agregarAlCarrito('Base Líquida Cobertura Total', 28.00)">AGREGAR AL CARRITO</button>
+                    </div>
+                </div>
+
+                <!-- Producto 6 -->
+                <div class="card-producto producto-item labios">
+                    <div class="contenedor-imagen">
+                        <img src="imag/gloss.png" alt="Gloss Brillo">
+                    </div>
+                    <div class="info-producto">
+                        <h3>Gloss Brillo Extra</h3>
+                        <p class="descripcion">Brillo hidratante con efecto volumen tridimensional para unos labios irresistibles y luminosos.</p>
+                        <p class="precio">$14.00</p>
+                        <button class="btn-magenta" onclick="agregarAlCarrito('Gloss Brillo Extra', 14.00)">AGREGAR AL CARRITO</button>
+                    </div>
+                </div>
+
+                <!-- Producto 7 -->
+                <div class="card-producto producto-item perfume">
+                    <div class="contenedor-imagen">
+                        <img src="imag/gaia.png" alt="Perfume Gaia">
+                    </div>
+                    <div class="info-producto">
+                        <h3>Perfume Gaia</h3>
+                        <p class="descripcion">Olor juvenil y muy refrescante</p>
+                        <p class="precio">$50.00</p>
+                        <button class="btn-magenta" onclick="agregarAlCarrito('Perfume Gaia', 50.00)">AGREGAR AL CARRITO</button>
+                    </div>
+                </div>
+
+                <!-- Producto 8 -->
+                <div class="card-producto producto-item perfume">
+                    <div class="contenedor-imagen">
+                        <img src="imag/osadia.png" alt="Osadía Infinita">
+                    </div>
+                    <div class="info-producto">
+                        <h3>Osadía Infinita</h3>
+                        <p class="descripcion">Aroma para cualquier ocasión</p>
+                        <p class="precio">$65.00</p>
+                        <button class="btn-magenta" onclick="agregarAlCarrito('Osadía Infinita', 65.00)">AGREGAR AL CARRITO</button>
+                    </div>
+                </div>
+
+                <!-- Producto 9 -->
+                <div class="card-producto producto-item ojos">
+                    <div class="contenedor-imagen">
+                        <img src="imag/sombra de ojos.png" alt="Paleta de sombras para ojos">
+                    </div>
+                    <div class="info-producto">
+                        <h3>Paleta de sombras</h3>
+                        <p class="descripcion">Sombras para cualquier makeup</p>
+                        <p class="precio">$68.00</p>
+                        <button class="btn-magenta" onclick="agregarAlCarrito('Paleta de Sombras', 68.00)">AGREGAR AL CARRITO</button>
+                    </div>
+                </div>
+
+                <!-- Producto 10 -->
+                <div class="card-producto producto-item ojos">
+                    <div class="contenedor-imagen">
+                        <img src="imag/ojosnegro.png" alt="Delineador Yanbal">
+                    </div>
+                    <div class="info-producto">
+                        <h3>Delineador de ojos Yanbal</h3>
+                        <p class="descripcion">Punta plumon para makeup diarios</p>
+                        <p class="precio">$25.00</p>
+                        <button class="btn-magenta" onclick="agregarAlCarrito('Delineador - Yanbal', 25.00)">AGREGAR AL CARRITO</button>
+                    </div>
+                </div>
+              
+
+                <!-- Producto 11 -->
+                <div class="card-producto producto-item labios">
+                    <div class="contenedor-imagen">
+                        <img src="imag/liquido.png" alt="Delineador Yanbal">
+                    </div>
+                    <div class="info-producto">
+                        <h3>Labial líquido satinado  </h3>
+                        <p class="descripcion"> Hydra-Lip Rojo Pasión</p>
+                        <p class="precio">$35.00</p>
+                        <button class="btn-magenta" onclick="agregarAlCarrito('Labial liquido Yanbal', 35.00)">AGREGAR AL CARRITO</button>
+                    </div>
+                </div>
+                  
+                <!-- Producto 12-->
+                <div class="card-producto producto-item labios">
+                    <div class="contenedor-imagen">
+                        <img src="imag/matte.png" alt="Delineador Yanbal">
+                    </div>
+                    <div class="info-producto">
+                        <h3>Hydra-Lip Labial  </h3>
+                        <p class="descripcion">  Larga Duración Neutral Nude</p>
+                        <p class="precio">$45.00</p>
+                        <button class="btn-magenta" onclick="agregarAlCarrito('Hydra-Lip', 45.00)">AGREGAR AL CARRITO</button>
+                    </div>
+                </div>
+
+                <!-- Producto 13-->
+                <div class="card-producto producto-item labios">
+                    <div class="contenedor-imagen">
+                        <img src="imag/crayon.png" alt="Delineador Yanbal">
+                    </div>
+                    <div class="info-producto">
+                        <h3>Crayon Labial </h3>
+                        <p class="descripcion">  Crayon</p>
+                        <p class="precio">$50.00</p>
+                        <button class="btn-magenta" onclick="agregarAlCarrito('Crayon', 50.00)">AGREGAR AL CARRITO</button>
+                    </div>
+                </div>
+                
+                <!-- Producto 13-->
+                <div class="card-producto producto-item labios">
+                    <div class="contenedor-imagen">
+                        <img src="imag/tinta.png" alt="Delineador Yanbal">
+                    </div>
+                    <div class="info-producto">
+                        <h3> Tinta </h3>
+                        <p class="descripcion"> Tinta</p>
+                        <p class="precio">$35.00</p>
+                        <button class="btn-magenta" onclick="agregarAlCarrito('Crayon', 35.00)">AGREGAR AL CARRITO</button>
+                    </div>
+                </div>
+
+                <!-- Producto 14 -->
+                <div class="card-producto producto-item perfume">
+                    <div class="contenedor-imagen">
+                        <img src="imag/alavida.png" alt="Perfume Gaia">
+                    </div>
+                    <div class="info-producto">
+                        <h3>A la Vida</h3>
+                        <p class="descripcion">Para las noches de gala </p>
+                        <p class="precio">$85.00</p>
+                        <button class="btn-magenta" onclick="agregarAlCarrito('Perfume Gaia', 85.00)">AGREGAR AL CARRITO</button>
+                    </div>
+                </div>
+                <!-- Producto 15 -->
+                <div class="card-producto producto-item perfume">
+                    <div class="contenedor-imagen">
+                        <img src="imag/tempation.png" alt="Perfume Gaia">
+                    </div>
+                    <div class="info-producto">
+                        <h3>Tempation</h3>
+                        <p class="descripcion">Para todo tipo de eventos</p>
+                        <p class="precio">$75.00</p>
+                        <button class="btn-magenta" onclick="agregarAlCarrito('Perfume Gaia', 75.00)">AGREGAR AL CARRITO</button>
+                    </div>
+                </div>
+                <!-- Producto 16 -->
+                <div class="card-producto producto-item perfume">
+                    <div class="contenedor-imagen">
+                        <img src="imag/dulce.png" alt="Perfume Gaia">
+                    </div>
+                    <div class="info-producto">
+                        <h3>Dulce Amistad</h3>
+                        <p class="descripcion">Con un olor excelente</p>
+                        <p class="precio">$85.00</p>
+                        <button class="btn-magenta" onclick="agregarAlCarrito('Perfume Gaia', 85.00)">AGREGAR AL CARRITO</button>
+                    </div>
+                </div>
+                <!-- Producto 17 -->
+                <div class="card-producto producto-item perfume">
+                    <div class="contenedor-imagen">
+                        <img src="imag/cielo.png" alt="Perfume Gaia">
+                    </div>
+                    <div class="info-producto">
+                        <h3>Cielo</h3>
+                        <p class="descripcion">Aroma intenso</p>
+                        <p class="precio">$85.00</p>
+                        <button class="btn-magenta" onclick="agregarAlCarrito('Perfume Gaia', 85.00)">AGREGAR AL CARRITO</button>
+                    </div>
+                </div>
+                <!-- Producto 18-->
+                <div class="card-producto producto-item rostro">
+                    <div class="contenedor-imagen">
+                        <img src="imag/polvo.png" alt="Polvo Compacto">
+                    </div>
+                    <div class="info-producto">
+                        <h3>Polvo compacto</h3>
+                        <p class="descripcion">Polvo de 12H de duracion </p>
+                        <p class="precio">$45.00</p>
+                        <button class="btn-magenta" onclick="agregarAlCarrito('Polvo ', 45.00)">AGREGAR AL CARRITO</button>
+                    </div>
+                </div>
+                <!-- Producto 18-->
+                <div class="card-producto producto-item rostro">
+                    <div class="contenedor-imagen">
+                        <img src="imag/primer.png" alt="Primer">
+                    </div>
+                    <div class="info-producto">
+                        <h3>Primer </h3>
+                        <p class="descripcion">Para la preparacion de la Piel  </p>
+                        <p class="precio">$55.00</p>
+                        <button class="btn-magenta" onclick="agregarAlCarrito('Polvo ', 55.00)">AGREGAR AL CARRITO</button>
+                    </div>
+                </div>
+                <!-- Producto 19-->
+                <div class="card-producto producto-item rostro">
+                    <div class="contenedor-imagen">
+                        <img src="imag/corrector.png" alt="Corrector">
+                    </div>
+                    <div class="info-producto">
+                        <h3>Corrector </h3>
+                        <p class="descripcion">Para una iluminacion del rostro </p>
+                        <p class="precio">$65.00</p>
+                        <button class="btn-magenta" onclick="agregarAlCarrito('Corrector ', 65.00)">AGREGAR AL CARRITO</button>
+                    </div>
+                </div>
+                <!-- Producto 20-->
+                <div class="card-producto producto-item rostro">
+                    <div class="contenedor-imagen">
+                        <img src="imag/spray.png" alt="Spray">
+                    </div>
+                    <div class="info-producto">
+                        <h3>Spray Fijador</h3>
+                        <p class="descripcion">Fijador para un buen acabado </p>
+                        <p class="precio">$55.00</p>
+                        <button class="btn-magenta" onclick="agregarAlCarrito('Spray ', 55.00)">AGREGAR AL CARRITO</button>
+                    </div>
+                </div>
+
+                  <!-- Producto 21 -->
+                <div class="card-producto producto-item ojos">
+                    <div class="contenedor-imagen">
+                        <img src="imag/perfilador.png" alt="Perfilador de Cejas 3 en 1">
+                    </div>
+                    <div class="info-producto">
+                        <h3>Perfilador </h3>
+                        <p class="descripcion">Para el perfilado de cejas</p>
+                        <p class="precio">$25.00</p>
+                        <button class="btn-magenta" onclick="agregarAlCarrito('Perfilador', 25.00)">AGREGAR AL CARRITO</button>
+                    </div>
+                </div>
+
+                <!-- Producto 21 -->
+                <div class="card-producto producto-item ojos">
+                    <div class="contenedor-imagen">
+                        <img src="imag/cejassombra.png" alt="Sombra para cejas">
+                    </div>
+                    <div class="info-producto">
+                        <h3>Sombra para cejas </h3>
+                        <p class="descripcion">Sombra para las cejas</p>
+                        <p class="precio">$40.00</p>
+                        <button class="btn-magenta" onclick="agregarAlCarrito('Sombra para las cejas', 40.00)">AGREGAR AL CARRITO</button>
+                    </div>
+                </div>
+                
+
+               
+            </section>
+        </div>
+    </main>
+
+    
+    <footer class="aless-footer">
+        <div class="footer-container">
+            <div class="footer-col brand-col">
+                <h2 class="footer-logo">ALESS</h2>
+                <a href="nosotros.html" class="footer-sublink">Sobre Nosotros</a>
+            </div>
+
+            <div class="footer-col links-col">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="productos.html">Productos</a></li>
+                    <li><a href="tutoriales.html">Tutoriales</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                    <li><a href="nosotros.html">Nosotros</a></li>
+                </ul>
+            </div>
+
+            <div class="social-container">
+                <ul class="social-links">
+                    <li>
+                        <a href="https://www.facebook.com/share/19VL4VYKNM/" target="_blank" rel="noopener noreferrer" class="facebook" aria-label="Facebook">
+                            <i class="fa-brands fa-facebook"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/aless.store.pe?srtk=Zm1jY3Y1NWplYno0" target="_blank" rel="noopener noreferrer" class="instagram" aria-label="Instagram">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+         </footer>
+
+        <div class="floating-contact">
+        <a href="https://wa.me/51999187652" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-whatsapp"></i> +51 99187652
+        </a>
+    </div>
+     
+
+    <script src="script/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aless - Sobre Nosotros</title>
+    <!-- Tus estilos CSS -->
+    <link rel="stylesheet" href="ccs/nosotros.css">
+    <!-- Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="imag/icono.png" type="image/png" sizes="32x32">
+    <link rel="icon" href="imag/icono.png" type="image/png" sizes="192x192">
+    <link rel="apple-touch-icon" href="imag/icono.png">
+</head>
+<body>
+
+    <!-- ================= ENCABEZADO ================= -->
+    <header class="header">
+        <div class="logo">ALESS</div>
+        <nav class="nav">
+            <ul class="menu">
+                <li><a href="index.html">INICIO</a></li>
+                <li><a href="productos.html">PRODUCTOS</a></li>
+                <li><a href="contacto.html">CONTACTO</a></li>
+                <li><a href="tutoriales.html">TUTORIALES</a></li>
+                
+                <!-- Menú Desplegable -->
+                <li class="dropdown">
+                     <a href="nosotros.html" class="active dropdown-btn">NOSOTROS ▾</a>
+                    <ul class="dropdown-content">
+                        <li><a href="index.html">INICIO</a></li>
+                        <li><a href="productos.html">PRODUCTOS</a></li>
+                        <li><a href="contacto.html">CONTACTO</a></li>
+                        <li><a href="tutoriales.html">TUTORIALES</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ================= CONTENIDO PRINCIPAL: SOBRE NOSOTROS ================= -->
+    <main class="contenedor-principal">
+        
+        <div class="banner-trucos">
+            <h1>SOBRE NOSOTROS</h1>
+            <p>Conoce la historia, la pasión y el propósito detrás de ALESS </p>
+        </div>
+
+        <!-- Sección de Información / Historia -->
+        <section class="seccion-historia">
+            <div class="bloque-texto">
+                <h2>Nuestra Esencia</h2>
+                <p>
+                    En <strong>ALESS</strong> creemos que el maquillaje no es solo una rutina, sino una forma de expresión, confianza y arte. Nos dedicamos a ofrecerte productos de calidad y variedad que realzan tu belleza natural con total seguridad.
+                </p>
+                <p>
+                    Nuestro compromiso es acompañarte en cada paso de tu estilo, brindándote asesoría, tendencias y los mejores artículos para que siempre te sientas única y radiante.
+                </p>
+            </div>
+            
+            <div class="bloque-tarjeta">
+                <div class="tarjeta-calidad">
+                    <i class="fa-solid fa-heart"></i>
+                    <h3>Calidad y Variedad</h3>
+                    <p>Pensado exclusivamente para ti, cuidando cada detalle en nuestra selección de productos de belleza y cuidado personal.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= CARRUSEL DE FOTOS DE MAQUILLAJE ================= -->
+        <section class="seccion-carrusel">
+            <div class="carrusel-contenedor">
+                <div class="carrusel-pista">
+                    <div class="carrusel-slide">
+                        <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?q=80&w=1200" alt="Maquillaje Aless 1">
+                    </div>
+                    <div class="carrusel-slide">
+                        <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?q=80&w=1200" alt="Maquillaje Aless 2">
+                    </div>
+                    <div class="carrusel-slide">
+                        <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?q=80&w=1200" alt="Maquillaje Aless 3">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ================= WHATSAPP FLOTANTE ================= -->
+    <div class="floating-contact">
+        <a href="https://wa.me/51999187652" target="_blank">
+            <i class="fa-brands fa-whatsapp"></i> +51 999187652
+        </a>
+    </div>
+
+    <!-- ================= PIE DE PÁGINA (FOOTER) ================= -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="brand-col">
+                <h2>ALESS</h2>
+                <a href="sobre-nosotros.html">Sobre Nosotros</a>
+            </div>
+            <div class="links-col">
+                <h4 class="footer-col">Navegación</h4>
+                <a href="index.html">Inicio</a>
+                <a href="productos.html">Productos</a>
+                <a href="tutoriales.html">Tutoriales</a>
+                <a href="contacto.html">Contacto</a>
+                <li><a href="nosotros.html">NOSOTROS</a></li>
+            </div>
+            <div class="footer-col">
+                <h4>Redes Sociales</h4>
+                <div class="social-links-footer">
+                    <a href="https://www.facebook.com/profile.php?id=100067535053566" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/aless.store.pe?srtk=Zm1jY3Y1NWplYno0" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Envíanos un correo</h4>
+                <form class="subscribe-form" action="#" method="POST">
+                    <input type="email" placeholder="Email" required>
+                    <button type="submit"><i class="fa-solid fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

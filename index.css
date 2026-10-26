@@ -1,0 +1,567 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-rosa-marca: #c98893;       /* Tono rosa oficial de ALESS */
+    --color-rosa-hover: #b87580;       /* Tono rosa para hovers */
+    --color-rosa-claro: #fdf5f7;       /* Fondos suaves y hovers de menú */
+    --color-texto-oscuro: #333333;     /* Títulos y textos principales */
+    --color-texto-suave: #666666;      /* Enlaces y descripciones */
+    --color-fondo-inputs: #b3888e;     /* Formulario de contacto */
+    --border-radius-cajas: 10px;       /* Redondeado uniforme de tarjetas y cajas */
+    --border-radius-pildora: 20px;     /* Redondeado de botones de filtro */
+}
+
+body {
+    background-color: #ffffff;
+    color: var(--color-texto-oscuro);
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Tipografía elegante para títulos de todo el sitio */
+h1, h2, h3, .logo, .summary-title {
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 0.5px;
+}
+
+p {
+    color: var(--color-texto-suave);
+}
+
+h2 {
+    color: var(--color-rosa-marca);
+}
+
+/* ==========================================
+   2. HEADER Y NAVEGACIÓN UNIFICADA
+   ========================================== */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 40px;
+    background-color: var(--color-rosa-marca);
+    border-bottom: 1px solid #eaeaea;
+}
+
+.logo {
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.nav a {
+    color: #ffffff;
+    text-decoration: none;
+    margin-left: 25px;
+    font-size: 0.85rem;
+    letter-spacing: 1.5px;
+    font-weight: 500;
+    transition: color 0.3s;
+    text-transform: uppercase;
+}
+
+.nav a:hover,
+.nav a.active {
+    color: #fce8eb;
+}
+
+/* Menú Desplegable (Dropdown) */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: var(--color-rosa-marca);
+    min-width: 150px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    z-index: 100;
+    overflow: hidden;
+}
+
+.dropdown-content a {
+    color: #ffffff;
+    padding: 10px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 0.75rem;
+    margin-left: 0 !important;
+    letter-spacing: 1px;
+    transition: background-color 0.2s;
+}
+
+.dropdown-content a:hover {
+    background-color: var(--color-rosa-hover);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* ==========================================
+   3. CONTENEDOR PRINCIPAL Y BANNERS
+   ========================================== */
+.contenedor-principal {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.banner-contacto {
+    background-color: var(--color-rosa-marca);
+    padding: 45px 20px;
+    border-radius: var(--border-radius-cajas);
+    text-align: center;
+    margin-bottom: 45px;
+    box-shadow: 0 4px 15px rgba(201, 136, 147, 0.25);
+}
+
+.banner-contacto h1 {
+    font-size: 2.2rem;
+    letter-spacing: 3px;
+    margin-bottom: 12px;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.banner-contacto p {
+    color: #fdf6f6;
+    font-size: 1rem;
+}
+
+/* Animación de levitación */
+@keyframes flotar {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-6px); }
+    100% { transform: translateY(0px); }
+}
+
+.flotar {
+    animation: flotar 4s ease-in-out infinite;
+}
+
+.mb-5 {
+    margin-bottom: 40px;
+}
+
+/* ==========================================
+   4. INICIO: CATEGORÍAS (OJOS, ROSTRO, LABIOS)
+   ========================================== */
+.seccion-categorias {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.card-categoria {
+    background-color: #ffffff;
+    border: 1px solid #e5e5e5;
+    border-radius: var(--border-radius-cajas);
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-categoria:hover {
+    transform: translateY(-5px);
+    border-color: var(--color-rosa-marca);
+    box-shadow: 0 8px 20px rgba(201, 136, 147, 0.2);
+}
+
+.contenedor-imagen-cat {
+    position: relative;
+    width: 100%;
+    height: 260px;
+    overflow: hidden;
+}
+
+.contenedor-imagen-cat img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.95;
+    transition: transform 0.4s ease;
+}
+
+.card-categoria:hover .contenedor-imagen-cat img {
+    transform: scale(1.05);
+}
+
+.overlay-texto {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background-color: rgba(201, 136, 147, 0.92);
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    transition: height 0.4s ease, padding 0.4s ease;
+}
+
+.card-categoria:hover .overlay-texto {
+    height: 100%;
+    padding: 20px;
+}
+
+.overlay-texto h3 {
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+    color: #ffffff;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.overlay-texto p {
+    color: #ffffff;
+    font-size: 0.82rem;
+    line-height: 1.45;
+    margin: 0;
+}
+
+.card-categoria .etiqueta {
+    padding: 14px;
+    font-size: 0.85rem;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+    text-align: center;
+    background-color: var(--color-rosa-marca);
+    color: #ffffff;
+}
+
+/* ==========================================
+   5. TUTORIALES: FILTROS Y TARJETAS
+   ========================================== */
+.tutorial-filters {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin: 25px 0 35px 0;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    background-color: transparent;
+    border: 1.5px solid var(--color-rosa-marca);
+    color: var(--color-rosa-marca);
+    padding: 6px 18px;
+    border-radius: var(--border-radius-pildora);
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background-color: var(--color-rosa-marca);
+    color: #ffffff;
+}
+
+.read-more-link {
+    position: absolute;
+    bottom: 15px;
+    right: 20px;
+    color: #ffffff;
+    text-decoration: underline;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+/* ==========================================
+   6. CONTACTO: ESTILOS DE CAJAS Y FORMULARIO
+   ========================================== */
+.contacto-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.info-box, .form-box {
+    background-color: var(--color-rosa-marca);
+    color: #ffffff;
+    padding: 28px;
+    border-radius: var(--border-radius-cajas);
+}
+
+.info-box {
+    margin-bottom: 20px;
+}
+
+.info-box h3 {
+    font-size: 1.1rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.info-box p {
+    color: #ffffff;
+    font-size: 0.9rem;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+    color: #ffffff;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background-color: var(--color-fondo-inputs);
+    color: #ffffff;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 0.9rem;
+    outline: none;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.btn-submit {
+    width: 100%;
+    background-color: var(--color-fondo-inputs);
+    color: #ffffff;
+    border: none;
+    padding: 14px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-submit:hover {
+    background-color: var(--color-rosa-hover);
+}
+
+/* ==========================================
+   7. FOOTER ROSA UNIFICADO
+   ========================================== */
+.aless-footer {
+    background-color: var(--color-rosa-marca);
+    color: #ffffff;
+    padding: 40px 40px 25px 40px;
+    margin-top: 60px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 30px;
+    align-items: start;
+}
+
+.footer-col {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-logo {
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    color: #ffffff;
+}
+
+.footer-sublink, 
+.links-col a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.85rem;
+    opacity: 0.9;
+    transition: opacity 0.2s;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.footer-sublink:hover, 
+.links-col a:hover {
+    opacity: 1;
+}
+
+.links-col ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.social-title, 
+.newsletter-title {
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.social-icons {
+    display: flex;
+    gap: 12px;
+}
+
+.social-icon {
+    width: 34px;
+    height: 34px;
+    background-color: #ffffff;
+    color: var(--color-rosa-marca);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: transform 0.2s, background-color 0.2s, color 0.2s;
+}
+
+.social-icon:hover {
+    transform: scale(1.1);
+    background-color: #fdf5f7;
+}
+
+.newsletter-form {
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 4px;
+    padding: 3px 6px;
+    width: 100%;
+    max-width: 240px;
+}
+
+.newsletter-form input {
+    border: none;
+    outline: none;
+    padding: 8px;
+    width: 100%;
+    font-size: 0.8rem;
+    color: #333;
+    font-family: 'Poppins', sans-serif;
+}
+
+.newsletter-form button {
+    background: transparent;
+    border: none;
+    color: var(--color-rosa-marca);
+    cursor: pointer;
+    padding: 6px 10px;
+    font-size: 0.85rem;
+}
+
+/* ==========================================
+   8. COMPONENTES EXTRA (MAPA, WHATSAPP, RESPONSIVE)
+   ========================================== */
+#ubicacion {
+    text-align: center;
+    padding: 30px 0;
+}
+
+#ubicacion h2 {
+    font-size: 1.8rem;
+    margin-bottom: 8px;
+}
+
+#ubicacion p {
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+}
+
+.map-container {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Botón flotante de WhatsApp */
+.floating-contact {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.floating-contact a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #25d366;
+    color: #ffffff;
+    padding: 8px 16px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.8rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.floating-contact a:hover {
+    transform: translateY(-3px);
+    background-color: #20ba5a;
+}
+
+/* Adaptación a dispositivos móviles */
+@media (max-width: 768px) {
+    .seccion-categorias,
+    .contacto-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+    }
+
+    .contenedor-principal {
+        width: 95%;
+        padding: 20px 10px;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+}
